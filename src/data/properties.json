@@ -11,7 +11,7 @@
     "Id":2,
     "Name":"House 2",
     "Type":"House",
-    "SellRent":1,
+    "SellRent":2,
     "Price":1200,
     "image":"prop-2"
   },
@@ -22,5 +22,29 @@
     "SellRent":1,
     "Price":1200,
     "image":"prop-3"
+  },
+  {
+    "Id":4,
+    "Name":"House 4",
+    "Type":"House",
+    "SellRent":2,
+    "Price":1200,
+    "image":"prop-4"
+  },
+  {
+    "Id":5,
+    "Name":"House 5",
+    "Type":"House",
+    "SellRent":2,
+    "Price":1200,
+    "image":"prop-5"
+  },
+  {
+    "Id":6,
+    "Name":"House 6",
+    "Type":"House",
+    "SellRent":1,
+    "Price":1200,
+    "image":"prop-6"
   }
 ]

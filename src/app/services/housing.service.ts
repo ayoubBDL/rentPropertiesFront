@@ -15,14 +15,12 @@ export class HousingService {
     .pipe(
       map(data => {
         const propertiesArray: Array<IProperty> = [];
-        for (const id in data){
-          console.log("iddd", id)
-          console.log("element", data)
-          // if(data.hasOwnProperty(id)){
-          //   propertiesArray.push(data[id]);
-          // }
-        }
-        return data;
+        Object.values(data).forEach(element => {
+          if(element.SellRent === SellRent){
+            propertiesArray.push(element)
+          }
+        });
+        return propertiesArray;
       })
     )
   }

@@ -6,17 +6,21 @@ import { PropertyCardComponent } from './property/property-card/property-card.co
 import { PropertyListComponent } from './property/property-list/property-list.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {HttpClientModule} from '@angular/common/http';
+
+import { FormsModule } from '@angular/forms';
 import { HousingService } from './services/housing.service';
 import { AddPropertyComponent } from './property/add-property/add-property.component';
 import { Routes,RouterModule } from '@angular/router';
 import { PropertyDetailComponent } from './property/property-detail/property-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UserRegisterComponent } from './user/user-register/user-register.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
 
 const appRoutes: Routes = [
   {path:'', component:PropertyListComponent},
   {path:'add-property', component:AddPropertyComponent},
   {path:'property-detail/:id', component:PropertyDetailComponent},
-  {path:'rent-property', component:AddPropertyComponent},
+  {path:'rent-property', component:PropertyListComponent},
   {path:'**', component:PageNotFoundComponent}
 ]
 
@@ -28,10 +32,13 @@ const appRoutes: Routes = [
     NavBarComponent,
     AddPropertyComponent,
     PropertyDetailComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    UserRegisterComponent,
+    UserLoginComponent
    ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],

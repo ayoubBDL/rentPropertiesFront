@@ -9,7 +9,7 @@ import { HousingService } from 'src/app/services/housing.service';
 })
 export class PropertyListComponent implements OnInit{
 
-  properties: Array<any> = [];
+  properties: any = [];
   SellRent=1;
 
   constructor(private route:ActivatedRoute,private housingService:HousingService){}
