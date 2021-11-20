@@ -1,1 +1,67 @@
-<p>user-register works!</p>
+<div class="row">
+  <div class="col-6 m-auto">
+    <div class="card m-auto">
+      <div class="card-header">
+        Register
+      </div>
+      <div class="card-body">
+        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+          <div class="form-group col-12">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="userName">
+            <span class="error-block" *ngIf="!userName!.valid && (userName!.touched || userSubmitted)">
+              Please provide a name
+            </span>
+          </div>
+
+          <div class="form-group col-12">
+            <label for="name" class="form-label">Email</label>
+            <input type="text" class="form-control" formControlName="email">
+            <span class="error-block" *ngIf="!email!.valid && (email!.touched || userSubmitted)">
+              <span *ngIf="email.hasError('required')">
+                Please provide an email
+              </span>
+              <span *ngIf="email.hasError('email')">
+                Please provide a valid email
+              </span>
+            </span>
+          </div>
+
+          <div class="form-group col-12">
+            <label for="name" class="form-label">Password</label>
+            <input type="password" class="form-control" formControlName="password">
+            <span class="error-block" *ngIf="!password!.valid && (password!.touched || userSubmitted)">
+              Password is easy
+            </span>
+          </div>
+
+          <div class="form-group col-12">
+            <label for="name" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" formControlName="confirmPassword">
+            <span class="error-block" *ngIf="!registrationForm.get('confirmPassword')!.valid && (registrationForm.get('confirmPassword')!.touched || userSubmitted)">
+              Password doesn't match
+            </span>
+          </div>
+
+          <div class="form-group col-12">
+            <label for="name" class="form-label">Mobile</label>
+            <input type="text" class="form-control" formControlName="mobile">
+            <span class="error-block" *ngIf="!mobile!.valid && (mobile!.touched || userSubmitted)">
+              Mobile is not correct
+            </span>
+          </div>
+
+          <div class="form-group col-12">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-secondary ml-2">Cancel</button>
+          </div>
+
+          Form:Values: {{registrationForm.value | json}} <br>
+          Form:Status: {{registrationForm.valid}}
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
